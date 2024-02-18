@@ -37,7 +37,7 @@ public class NPC : MonoBehaviour
     }
     
     /// Generates char variables 
-    void nextNPC(string[] newDudette, bool[] symptoms)
+    public void nextNPC(string[] newDudette, bool[] symptoms)
     {
         // String: [FirstName, LastName, Age, Gender, HomeTown] 
         // Bool: [Sweaty, Fever, Cough, Welts, Misty, Heartbeat, City]
