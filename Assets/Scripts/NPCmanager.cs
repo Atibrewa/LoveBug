@@ -14,13 +14,13 @@ public class NPCManager : MonoBehaviour
     List<bool[]> symList;
     int currClient;
     GameObject npc;
+    bool runOnce = false;
 
     void Start()
     {
         currClient = 0;
         npc = GameObject.Find("Client");
         generateDay1();
-        rotateNPC();
     }
 
     public void rotateNPC(){
@@ -75,6 +75,10 @@ public class NPCManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        while(!runOnce) 
+        {
+            rotateNPC();
+            runOnce = true;
+        }
     }
 }

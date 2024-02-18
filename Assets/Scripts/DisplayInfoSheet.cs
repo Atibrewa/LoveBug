@@ -39,6 +39,7 @@ public class DisplayInfoSheet : MonoBehaviour
                 information.gameObject.SetActive(false);
                 sheetSpriteEnlarged.SetActive(false);
                 button.SetActive(false);
+                information.text = "Info Sheet";
             }
         }
 
@@ -50,7 +51,7 @@ public class DisplayInfoSheet : MonoBehaviour
         foreach (string info in infoToAdd)
         {
             Debug.Log(info);
-            information.text += " " + info;
+            information.text += "\n" + info;
         }
     }
 }

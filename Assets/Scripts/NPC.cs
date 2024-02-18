@@ -18,6 +18,9 @@ public class NPC : MonoBehaviour
     {
         sweatSprite = GameObject.Find("Sweat");
         weltSprite = GameObject.Find("Welts");
+        temp = 98.6f;
+        symSum = 0;
+        score = 0;
         // Kaliana will write the way it is declared/ how the npcs get assigned symptoms based on the preset scores etc
         // fName = "Uni";
         // lName = "Vang";
@@ -68,6 +71,7 @@ public class NPC : MonoBehaviour
 
     void setTemp()
     {
+        Debug.Log("test");
         if (fever) {
             temp = UnityEngine.Random.Range(99.5f, 106.0f);
         } else {
@@ -77,6 +81,7 @@ public class NPC : MonoBehaviour
 
     void setSicknessScores()
     {
+        Debug.Log("score");
         symSum = 0;
         if (sweaty) {
             symSum ++;
