@@ -14,6 +14,7 @@ public class NPCManager : MonoBehaviour
     List<bool[]> symList;
     int currClient;
     GameObject npc;
+    EndSeq ending = new EndSeq;
     bool runOnce = false;
 
     void Start()
@@ -31,7 +32,7 @@ public class NPCManager : MonoBehaviour
         }
         else
         {
-            currClient = 0;
+            endSeq.initiate();
         }
     }
     
