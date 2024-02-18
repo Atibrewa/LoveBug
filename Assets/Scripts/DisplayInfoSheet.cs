@@ -8,12 +8,15 @@ public class DisplayInfoSheet : MonoBehaviour
     public TextMeshProUGUI information;
     public GameObject sheetSpriteEnlarged;
     public GameObject button;
+    GameObject currClient;
+    private string[] infoToAdd;
     // Start is called before the first frame update
     void Start()
     {
         information.gameObject.SetActive(false);
         sheetSpriteEnlarged.SetActive(false);
         button.SetActive(false);
+        currClient = GameObject.Find("Client");
     }
 
     // Update is called once per frame
@@ -29,6 +32,7 @@ public class DisplayInfoSheet : MonoBehaviour
                 information.gameObject.SetActive(true);
                 sheetSpriteEnlarged.SetActive(true);
                 button.SetActive(true);
+                GetInfo();
             }
             else if (targetObject.name == "InfoSheet_Button")
             {
@@ -38,5 +42,15 @@ public class DisplayInfoSheet : MonoBehaviour
             }
         }
 
+    }
+
+    void GetInfo()
+    {
+        infoToAdd = currClient.GetComponent<NPC>().infoSheet;
+        foreach (string info in infoToAdd)
+        {
+            Debug.Log(info);
+            information.text += " " + info;
+        }
     }
 }

@@ -4,15 +4,28 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public int score = 0;
+    public int day = 1;
+    GameObject manager;
+    GameObject client;
+
     void Start()
     {
-        
+        manager = GameObject.Find("NPCManager");
+        client = GameObject.Find("Client");
     }
 
-    // Update is called once per frame
-    void Update()
+
+    public void accept()
     {
-        
+        manager.GetComponent<NPCManager>().rotateNPC();
+        score += client.GetComponent<NPC>().score;
     }
+
+    public void deny()
+    {
+        manager.GetComponent<NPCManager>().rotateNPC();
+        score -= client.GetComponent<NPC>().score;
+    }
+
 }

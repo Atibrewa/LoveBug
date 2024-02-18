@@ -1,15 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class NPCmanager : MonoBehaviour
+public class NPCManager : MonoBehaviour
 {
     // [FirstName, LastName, Age, Gender, HomeTown] 
     // [Sweaty, Fever, Cough, Welts, Misty, Heartbeat]
 
     // Start is called before the first frame update
-    string[][] dayList;
-    bool[][] symList;
+    List<string[]> dayList;
+    List<bool[]> symList;
     int currClient;
     GameObject npc;
 
@@ -23,7 +25,7 @@ public class NPCmanager : MonoBehaviour
 
     public void rotateNPC(){
         npc.GetComponent<NPC>().nextNPC(dayList[currClient], symList[currClient]);
-        if (currClient < dayList.Length)
+        if (currClient < dayList.Count)
         {
             currClient++;
         }
@@ -36,55 +38,38 @@ public class NPCmanager : MonoBehaviour
 
     void generateDay1()
     {
-        string[] p0 = {"Barry", "Newton", "18", "M", "St Paul"};
-        bool[] p0s = {false, false, false, false, false, false};
-        dayList[0] = p0;
-        symList[0] = p0s;
+        string[] p0 = new string[5] {"Barry", "Newton", "18", "M", "St Paul"};
+        bool[] p0s = new bool[7] {false, false, false, false, false, false, false};
 
-        string[] p1 = {"Aahanaa", "Tibrewal", "20", "F", "St Paul"};
-        bool[] p1s= {true, true, true, false, false, true};
-        dayList[1] = p1;
-        symList[1] = p1s;
+        string[] p1 = new string[5] {"Aahanaa", "Tibrewal", "20", "F", "St Paul"};
+        bool[] p1s= new bool[7] {true, true, true, false, false, true, false};
 
-        string[] p2 = {"Karen", "White", "48", "F", "Edina"};
-        bool[] p2s = {true, false, true, false, false, false};
-        dayList[2] = p2;
-        symList[2] = p2s;
+        string[] p2 = new string[5] {"Karen", "White", "48", "F", "Edina"};
+        bool[] p2s = new bool[7] {true, false, true, false, false, false, true};
 
-        string[] p3 = {"Soulai", "Vang", "21", "M", "St Paul"};
-        bool[] p3s = {true, false, false, false, false, true};
-        dayList[3] = p3;
-        symList[3] = p3s;
+        string[] p3 = new string[5] {"Soulai", "Vang", "21", "M", "St Paul"};
+        bool[] p3s = new bool[7] {true, false, false, false, false, true, false};
 
-        string[] p4 = {"Uni", "Vang", "20", "M", "St Paul"};
-        bool[] p4s = {true, true, false, false, false, true};
-        dayList[4] = p4;
-        symList[4] = p4s;
+        string[] p4 = new string[5] {"Uni", "Vang", "20", "M", "St Paul"};
+        bool[] p4s = new bool[7] {true, true, false, false, false, true, false};
 
-        string[] p5 = {"Jerome", "Brown", "21", "M", "Edina"};
-        bool[] p5s = {true, true, true, false, false, false};
-        dayList[5] = p5;
-        symList[5] = p5s;
+        string[] p5 = new string[5] {"Jerome", "Brown", "21", "M", "Edina"};
+        bool[] p5s = new bool[7] {true, true, true, false, false, false, true};
 
-        string[] p6 = {"Kaliana", "Andria", "20", "X", "St Paul"};
-        bool[] p6s = {false, false, true, false, false, false};
-        dayList[6] = p6;
-        symList[6] = p6s;
+        string[] p6 = new string[5] {"Kaliana", "Andria", "20", "X", "St Paul"};
+        bool[] p6s = new bool[7] {false, false, true, false, false, false, false};
 
-        string[] p7 = {"Lucy", "Schroepfer", "44", "F", "St Paul"};
-        bool[] p7s = {true, false, true, false, false, false};
-        dayList[7] = p7;
-        symList[7] = p7s;
+        string[] p7 = new string[5] {"Lucy", "Schroepfer", "44", "F", "St Paul"};
+        bool[] p7s = new bool[7] {true, false, true, false, false, false, false};
 
-        string[] p8 = {"Gavin", "OBrien", "24", "M", "Edina"};
-        bool[] p8s = {true, false, false, false, false, false};
-        dayList[8] = p8;
-        symList[8] = p8s;
+        string[] p8 = new string[5] {"Gavin", "OBrien", "24", "M", "Edina"};
+        bool[] p8s = new bool[7] {true, false, false, false, false, false, true};
 
-        string[] p9 = {"Lulu", "Lemonholm", "7", "F", "St Paul"};
-        bool[] p9s = {false, true, true, false, false, false};
-        dayList[9] = p9;
-        symList[9] = p9s;
+        string[] p9 = new string[5] {"Lulu", "Lemonholm", "7", "F", "St Paul"};
+        bool[] p9s = new bool[7] {false, true, true, false, false, false, false};
+
+        dayList = new List<string[]>(){p0, p1, p2, p3, p4, p5, p6, p7, p8, p9};
+        symList = new List<bool[]>(){p0s, p1s, p2s, p3s, p4s, p5s, p6s, p7s, p8s, p9s};
     }
 
     // Update is called once per frame
