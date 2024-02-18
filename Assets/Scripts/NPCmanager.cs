@@ -15,8 +15,10 @@ public class NPCmanager : MonoBehaviour
 
     void Start()
     {
+        currClient = 0;
         npc = GameObject.Find("Client");
         generateDay1();
+        rotateNPC();
     }
 
     public void rotateNPC(){
