@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ToolUse : MonoBehaviour
 {
-    public DisplayInformation display;
+    public DisplayDiagnostics display;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.name == "Stethoscope")

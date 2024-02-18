@@ -31,7 +31,7 @@ public class NPC : MonoBehaviour
     }
     
     /// Generates char variables 
-    void generateNPC(string[] newDudette, bool[] symptoms; string first, string last, int symSumInp)
+    void generateNPC(string[] newDudette, bool[] symptoms, string first, string last, int symSumInp)
     {
 
         // [FirstName, LastName, Age, Gender, HomeTown] 
