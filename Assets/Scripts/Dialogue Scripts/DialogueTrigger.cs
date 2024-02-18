@@ -14,8 +14,8 @@ public class DialogueTrigger : MonoBehaviour
 
     void Update()
     {
-        // Player presses left click to advance on-screen dialogue
-        if(Input.GetMouseButtonDown(0)){
+        // Player presses X to advance on-screen dialogue
+        if(Input.GetKeyDown(KeyCode.X)){
             if(dialogueManager.typing){
                 dialogueManager.skip = true;
             }
