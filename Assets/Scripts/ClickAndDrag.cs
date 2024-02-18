@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StethoscopeUse : MonoBehaviour
+public class ClickAndDrag : MonoBehaviour
 {
     // Update is called once per frame
     public GameObject selectedObject;
