@@ -11,6 +11,7 @@ public class DisplayInfoSheet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        information.gameObject.SetActive(false);
         sheetSpriteEnlarged.SetActive(false);
         button.SetActive(false);
     }
@@ -25,11 +26,13 @@ public class DisplayInfoSheet : MonoBehaviour
 
             if (targetObject.name == "InfoSheet")
             {
+                information.gameObject.SetActive(true);
                 sheetSpriteEnlarged.SetActive(true);
                 button.SetActive(true);
             }
             else if (targetObject.name == "InfoSheet_Button")
             {
+                information.gameObject.SetActive(false);
                 sheetSpriteEnlarged.SetActive(false);
                 button.SetActive(false);
             }
