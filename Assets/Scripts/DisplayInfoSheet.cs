@@ -47,11 +47,13 @@ public class DisplayInfoSheet : MonoBehaviour
 
     void GetInfo()
     {
+        string text = "";
         infoToAdd = currClient.GetComponent<NPC>().infoSheet;
         foreach (string info in infoToAdd)
         {
             Debug.Log(info);
-            information.text += "\n" + info;
+            text += "\n" + info;
         }
+        information.text = text;
     }
 }

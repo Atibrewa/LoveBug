@@ -106,6 +106,8 @@ public class NPC : MonoBehaviour
             symSum = 5;
         }
 
+        
+
     }
 
 }

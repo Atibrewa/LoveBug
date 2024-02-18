@@ -25,7 +25,7 @@ public class NPCManager : MonoBehaviour
 
     public void rotateNPC(){
         npc.GetComponent<NPC>().nextNPC(dayList[currClient], symList[currClient]);
-        if (currClient < dayList.Count)
+        if (currClient < dayList.Count - 1)
         {
             currClient++;
         }
