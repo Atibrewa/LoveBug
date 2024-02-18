@@ -435,6 +435,7 @@ GameObject:
   m_Component:
   - component: {fileID: 421201653}
   - component: {fileID: 421201652}
+  - component: {fileID: 421201654}
   m_Layer: 0
   m_Name: Client
   m_TagString: Untagged
@@ -509,6 +510,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &421201654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 421201651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fffcb0d8b9aaa5f4dabc798803a75c01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sweaty: 0
+  fever: 0
+  cough: 0
+  welts: 0
+  misty: 0
+  heartbeat: 0
 --- !u!1 &504884380
 GameObject:
   m_ObjectHideFlags: 0
