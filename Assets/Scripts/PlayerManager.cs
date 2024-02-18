@@ -11,7 +11,9 @@ public class PlayerManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        day, dayScorescore, totalScore = 0;
+        day = 0;
+        dayScore = 0;
+        totalScore = 0;
     }
 
     // Update is called once per frame

@@ -33,8 +33,7 @@ public class NPC : MonoBehaviour
 
     void setTemp()
     {
-        float randFloat;
-        if fever {
+        if (fever) {
             temp = UnityEngine.Random.Range(99.5f, 106.0f);
         } else {
             temp = UnityEngine.Random.Range(97.5f, 99.4f);
