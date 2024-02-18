@@ -14,7 +14,7 @@ public class NPCManager : MonoBehaviour
     List<bool[]> symList;
     int currClient;
     GameObject npc;
-    EndSeq ending = new EndSeq;
+    public EndSequence ending;
     bool runOnce = false;
 
     void Start()
@@ -32,7 +32,8 @@ public class NPCManager : MonoBehaviour
         }
         else
         {
-            endSeq.initiate();
+            int score = GameObject.Find("Player").GetComponent<Player>().score;
+            ending.chooseEnding(score);
         }
     }
     
