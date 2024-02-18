@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class DisplayInformation : MonoBehaviour
+public class DisplayDiagnostics : MonoBehaviour
 {
     public TextMeshProUGUI infoDisplay;
 

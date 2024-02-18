@@ -15,7 +15,7 @@ public class ClickAndDrag : MonoBehaviour
         {
             Collider2D targetObject = Physics2D.OverlapPoint(mousePosition);
 
-            if (targetObject && targetObject.tag != "NPC")
+            if (targetObject && targetObject.tag != "NPC" && targetObject.name != "InfoSheet")
             {
                 selectedObject = targetObject.transform.gameObject;
                 offset = selectedObject.transform.position - mousePosition;
