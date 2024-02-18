@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class ToolUse : MonoBehaviour
 {
+    public DisplayInformation display;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.name == "Stethoscope")
         {
-            Debug.Log(GetComponent<NPC>().heartbeat);
+            display.changeInfo(GetComponent<NPC>().heartbeat.ToString());
         }
 
         if (collision.gameObject.name == "Thermometer")
         {
             float temp = GetComponent<NPC>().temp;
+            display.changeInfo(temp.ToString());
         }
     }
 }

@@ -4,43 +4,49 @@ using UnityEngine;
 
 public class NPC : MonoBehaviour
 {
-    public int symSum, score;
+    public string[] infoSheet;
+    public string hometown;
     public bool sweaty, fever, cough, welts, misty, heartbeat;
     public float temp;
-    public int sicknessThreshold;
-    public string fName, lName, hometown;
-
+    public int symSum, score, sicknessThreshold;
+    
     // Start is called before the first frame update
     void Start()
     {
         // Kaliana will write the way it is declared/ how the npcs get assigned symptoms based on the preset scores etc
-        fName = "Uni";
-        lName = "Vang";
-        hometown = "St Paul";
+        // fName = "Uni";
+        // lName = "Vang";
+        // hometown = "St Paul";
 
-        // for testing purposes to setup rest of game
-        sweaty = true;
-        fever = true;
-        cough = true;
-        welts = true;
-        misty = true;
-        heartbeat = true;
+        // // for testing purposes to setup rest of game
+        // sweaty = true;
+        // fever = true;
+        // cough = true;
+        // welts = true;
+        // misty = true;
+        // heartbeat = true;
 
         bool[] minorSymptoms = {sweaty, cough};
         bool[] majorSymptoms = {fever, heartbeat, welts, misty};
     }
     
     /// Generates char variables 
-    void generateNPC(string[] newDudette, bool[] symptoms; string first, string last, int symSumInp)
+    void generateNPC(string[] newDudette, bool[] symptoms)
     {
+        // String: [FirstName, LastName, Age, Gender, HomeTown] 
+        // Bool: [Sweaty, Fever, Cough, Welts, Misty, Heartbeat]
 
-        // [FirstName, LastName, Age, Gender, HomeTown] 
-        // [Sweaty, Fever, Cough, Welts, Misty, Heartbeat]
+        infoSheet = newDudette;
+        hometown = newDudette[4];
 
-        symSum = symSumInp;
-        score = sicknessThreshold-symSum;
-        fName = first;
-        lName = last;
+        sweaty = symptoms[0];
+        fever = symptoms[1];
+        cough = symptoms[2];
+        welts = symptoms[3];
+        misty = symptoms[4];
+        heartbeat = symptoms[5];
+
+        setTemp();
 
     }
 

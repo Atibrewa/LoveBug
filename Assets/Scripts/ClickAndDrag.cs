@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ClickAndDrag : MonoBehaviour
 {
-    // Update is called once per frame
     public GameObject selectedObject;
     Vector3 offset;
 
