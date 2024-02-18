@@ -47,4 +47,9 @@ public class NPC : MonoBehaviour
     {
         
     }
+
+    public bool getHeartbeat()
+    {
+        return heartbeat;
+    }
 }
