@@ -15,7 +15,7 @@ public class NPCmanager : MonoBehaviour
 
     }
 
-    string[][] generateDay1()
+    void generateDay1()
     {
         string[][] dayList;
 
@@ -33,7 +33,7 @@ public class NPCmanager : MonoBehaviour
         string[] p4 = {"Uni", "Vang", "20", "M", "St Paul"};
         string[] p4s = {true, true, false, false, false, true};
 
-        string[] p5 = {"Jerome", "Brown", "21" "M", "Edina"};
+        string[] p5 = {"Jerome", "Brown", "21", "M", "Edina"};
         string[] p5s = {true, true, true, false, false, false};
 
         string[] p6 = {"Kaliana", "Andria", "20", "X", "St Paul"};
@@ -48,7 +48,7 @@ public class NPCmanager : MonoBehaviour
         string[] p9 = {"Lulu", "Lemonholm", "7", "F", "St Paul"};
         string[] p9s = {false, true, true, false, false, false};
 
-        return dayList;
+        // return dayList;
     }
 
     // Update is called once per frame
