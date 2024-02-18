@@ -6,9 +6,10 @@ public class NPC : MonoBehaviour
 {
     public string[] infoSheet;
     public string hometown;
-    public bool sweaty, fever, cough, welts, misty, heartbeat;
+    public bool sweaty, fever, cough, welts, misty, heartbeat, bannedCity;
     public float temp;
-    public int symSum, score, sicknessThreshold;
+    public int symSum, score;
+    int sicknessThreshold = 2;
     
     // Start is called before the first frame update
     void Start()
@@ -26,15 +27,20 @@ public class NPC : MonoBehaviour
         // misty = true;
         // heartbeat = true;
 
-        bool[] minorSymptoms = {sweaty, cough};
-        bool[] majorSymptoms = {fever, heartbeat, welts, misty};
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
     }
     
     /// Generates char variables 
-    void generateNPC(string[] newDudette, bool[] symptoms)
+    void nextNPC(string[] newDudette, bool[] symptoms)
     {
         // String: [FirstName, LastName, Age, Gender, HomeTown] 
-        // Bool: [Sweaty, Fever, Cough, Welts, Misty, Heartbeat]
+        // Bool: [Sweaty, Fever, Cough, Welts, Misty, Heartbeat, City]
 
         infoSheet = newDudette;
         hometown = newDudette[4];
@@ -45,21 +51,13 @@ public class NPC : MonoBehaviour
         welts = symptoms[3];
         misty = symptoms[4];
         heartbeat = symptoms[5];
+        bannedCity = symptoms[6];
 
         setTemp();
+        setSicknessScores();
+        score = sicknessThreshold - symSum;
 
     }
-
-
-    // return int[] generateSymptomes(int symSumInp){
-    //     int[] symList = {0};
-    //     if (symSumInp == 0)
-    //     {
-    //         return symList;
-    //     } else if (symSumInp == 1) {
-    //         symList[0] = 1;
-    //     }
-    // }
 
     void setTemp()
     {
@@ -70,15 +68,32 @@ public class NPC : MonoBehaviour
         }
     }
 
-
-    // Update is called once per frame
-    void Update()
+    void setSicknessScores()
     {
-        
+        symSum = 0;
+        if (sweaty) {
+            symSum ++;
+        }
+        if (fever) {
+            symSum += 2;
+        }
+        if (cough) {
+            symSum ++;
+        }
+        if (welts) {
+            symSum += 2;
+        }
+        if (misty) {
+            symSum += 2;
+        }
+        if (heartbeat) {
+            symSum += 2;
+        }
+
+        if (bannedCity) {
+            symSum = 5;
+        }
+
     }
 
-    public bool getHeartbeat()
-    {
-        return heartbeat;
-    }
 }
