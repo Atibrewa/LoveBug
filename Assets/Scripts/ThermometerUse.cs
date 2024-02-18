@@ -24,13 +24,16 @@ public class ThermometerUse : MonoBehaviour
 
     void CheckTemp()
     {
-        float randFloat;
-        fever = client.GetComponent<NPC>().fever;
-        if fever {
-            randFloat = UnityEngine.Random.Range(99.5f, 106.0f);
-        } else {
-            randFloat = UnityEngine.Random.Range(97.5f, 99.4f);
+        if !temp {
+            fever = client.GetComponent<NPC>().fever;
+            float randFloat;
+            if fever {
+                randFloat = UnityEngine.Random.Range(99.5f, 106.0f);
+            } else {
+                randFloat = UnityEngine.Random.Range(97.5f, 99.4f);
+            }
+            temp = randFloat;
         }
-
+        
     }
 }
