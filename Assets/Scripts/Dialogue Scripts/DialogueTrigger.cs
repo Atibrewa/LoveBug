@@ -14,13 +14,13 @@ public class DialogueTrigger : MonoBehaviour
 
     void Update()
     {
-        // Player presses X to advance on-screen dialogue
+        // Player presses left click to advance on-screen dialogue
         if(Input.GetMouseButtonDown(0)){
             if(dialogueManager.typing){
                 dialogueManager.skip = true;
             }
             if (!dialogueManager.skip || !dialogueManager.typing){
-                dialogueManager.dialogueUIText.text = "";
+                dialogueManager.dialogueClientText.text = "";
                 dialogueManager.AdvanceSentence();
             }
         }

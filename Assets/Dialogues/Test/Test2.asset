@@ -15,3 +15,4 @@ MonoBehaviour:
   text: I do NOT need to be quarantined!
   nextSentence: {fileID: 11400000, guid: c05eeef9a262ef344aa39152b5267172, type: 2}
   attachedFacePortrait: 
+  clientSentence: 1

@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Test4
   m_EditorClassIdentifier: 
   text: WAITWAIT DON'T CLICK THAT-
-  nextSentence: {fileID: 0}
+  nextSentence: {fileID: 11400000, guid: 6df919384cd09fc47b4c65cddbeaf644, type: 2}
   attachedFacePortrait: 
+  clientSentence: 1

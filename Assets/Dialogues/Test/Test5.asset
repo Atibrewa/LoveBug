@@ -9,7 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25f22700e6cc60b40acfa2f5f6704636, type: 3}
-  m_Name: TestTree
+  m_Script: {fileID: 11500000, guid: 3c15d0ba97ce0b74782e8c50dc26cf3f, type: 3}
+  m_Name: Test5
   m_EditorClassIdentifier: 
-  startingSentence: {fileID: 11400000, guid: 3225d4f9c8b5ec74cb5697aadb910bc6, type: 2}
+  text: This will only take a second.
+  nextSentence: {fileID: 0}
+  attachedFacePortrait: 
+  clientSentence: 0

@@ -7,7 +7,8 @@ using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
-    public TextMeshProUGUI dialogueUIText;
+    public TextMeshProUGUI dialogueClientText;
+    public TextMeshProUGUI dialoguePlayerText;
     public Canvas dialogueCanvas;
     //public GameObject dialogueBorder;
     public bool endedDialogue;
@@ -49,15 +50,26 @@ public class DialogueManager : MonoBehaviour
             StartCoroutine(TypeSentence(sentence));
         }
         else if(skip){
-            dialogueUIText.text = sentence;
+            if (currentSentence.clientSentence) {
+                dialogueClientText.text = sentence;
+            }
+            else {
+                dialoguePlayerText.text = sentence;
+            }
         }
     }
 
     IEnumerator TypeSentence(string sentence){
         typing = true;
-        dialogueUIText.text = "";
+        dialogueClientText.text = "";
+        dialoguePlayerText.text = "";
         foreach(char letter in sentence.ToCharArray()){
-            dialogueUIText.text += letter;
+            if (currentSentence.clientSentence) {
+                dialogueClientText.text += letter;
+            }
+            else {
+                dialoguePlayerText.text += letter;
+            }
             if (!skip){
                 yield return new WaitForSeconds(0.05f);
             }
@@ -67,7 +79,8 @@ public class DialogueManager : MonoBehaviour
 
     void EndDialogue()
     {
-        dialogueUIText.text = "";
+        dialogueClientText.text = "";
+        dialoguePlayerText.text = "";
         endedDialogue = true;
         //dialogueBorder.SetActive(false);
     }
