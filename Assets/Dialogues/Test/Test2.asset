@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c15d0ba97ce0b74782e8c50dc26cf3f, type: 3}
+  m_Name: Test2
+  m_EditorClassIdentifier: 
+  text: I do NOT need to be quarantined!
+  nextSentence: {fileID: 11400000, guid: c05eeef9a262ef344aa39152b5267172, type: 2}
+  attachedFacePortrait: 
