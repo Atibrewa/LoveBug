@@ -31,8 +31,12 @@ public class NPC : MonoBehaviour
     }
     
     /// Generates char variables 
-    void generateNPC(string first, string last, int symSumInp)
+    void generateNPC(string[] newDudette, bool[] symptoms; string first, string last, int symSumInp)
     {
+
+        // [FirstName, LastName, Age, Gender, HomeTown] 
+        // [Sweaty, Fever, Cough, Welts, Misty, Heartbeat]
+
         symSum = symSumInp;
         score = sicknessThreshold-symSum;
         fName = first;
