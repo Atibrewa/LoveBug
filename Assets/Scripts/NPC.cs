@@ -10,10 +10,14 @@ public class NPC : MonoBehaviour
     public float temp;
     public int symSum, score;
     int sicknessThreshold = 2;
+
+    GameObject sweatSprite, weltSprite;
     
     // Start is called before the first frame update
     void Start()
     {
+        sweatSprite = GameObject.Find("Sweat");
+        weltSprite = GameObject.Find("Welts");
         // Kaliana will write the way it is declared/ how the npcs get assigned symptoms based on the preset scores etc
         // fName = "Uni";
         // lName = "Vang";
@@ -53,10 +57,13 @@ public class NPC : MonoBehaviour
         heartbeat = symptoms[5];
         bannedCity = symptoms[6];
 
+        weltSprite.SetActive(welts);
+        sweatSprite.SetActive(sweaty);
+
         setTemp();
         setSicknessScores();
         score = sicknessThreshold - symSum;
-
+       
     }
 
     void setTemp()
