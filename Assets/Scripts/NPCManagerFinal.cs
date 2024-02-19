@@ -1,10 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class NPCManager : MonoBehaviour
+public class NPCManagerFinal : MonoBehaviour
 {
-List<string[]> dayList;
+    // [FirstName, LastName, Age, Gender, HomeTown] 
+    // [Sweaty, Fever, Cough, Welts, Misty, Heartbeat]
+
+    // Start is called before the first frame update
+    List<string[]> dayList;
     List<bool[]> symList;
     int currClient;
     GameObject npc;

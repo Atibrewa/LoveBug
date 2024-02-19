@@ -18,6 +18,8 @@ public class EndSequence : MonoBehaviour
 
     public void chooseEnding(int score)
     {
+        GameObject.Find("InterfaceCanvas").SetActive(false);
+        GameObject.Find("DialogueCanvas").SetActive(false);
         if (score < -10) {
             badEnding.SetActive(true);
         }
